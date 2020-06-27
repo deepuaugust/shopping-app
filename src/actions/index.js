@@ -1,98 +1,61 @@
-import * as actionTypes from './actionTypes';
+import * as actionTypes from "./actionTypes";
 
 /**
- * @description - Function to get questions.
- * @returns {Object} - Actions type.
- */
-export const getQuestions = () => ({
-    type: actionTypes.QUESTIONS_LIST.GET,
-  });
-  
-/**
- * @description - Function to save questions.
+ * @description - Function to add product.
  * @param {Object} data - Payload data.
  * @returns {Object} - Returns type and payload.
  */
-export function storeQuestions(data) {
+export function addProduct(data) {
   return {
-    type: actionTypes.QUESTIONS_LIST.SUCCESS,
+    type: actionTypes.PRODUCT_LIST.ADD,
     payload: data,
   };
 }
 
 /**
- * @description - Function to clear questions.
- * @returns {Object} - Returns type and payload.
- */
-export function clearQuestions() {
-  return {
-    type: actionTypes.QUESTIONS_LIST.CLEAR,
-  };
-}
-
-/**
- * @description - Function to get question details.
- * @returns {Object} - Actions type.
- */
-export const getQuestionDetails = (id) => ({
-  type: actionTypes.QUESTION_DETAILS.GET,
-  payload: id,
-});
-
-/**
- * @description - Function to save question detail.
+ * @description - Function to delete product.
  * @param {Object} data - Payload data.
  * @returns {Object} - Returns type and payload.
  */
-export function storeQuestionDetails(data) {
+export function deleteProduct(data) {
   return {
-    type: actionTypes.QUESTION_DETAILS.SUCCESS,
+    type: actionTypes.PRODUCT_LIST.DELETE,
     payload: data,
   };
 }
 
 /**
- * @description - Function to clear question detail.
- * @returns {Object} - Returns type and payload.
- */
-export function clearQuestionDetails() {
-  return {
-    type: actionTypes.QUESTION_DETAILS.CLEAR,
-  };
-}
-
-/**
- * @description - Function to post vote.
+ * @description - Function to edit product.
  * @param {Object} data - Payload data.
  * @returns {Object} - Returns type and payload.
  */
-export function postVote(data) {
+export function editProduct(data) {
   return {
-    type: actionTypes.POST_VOTE.POST,
+    type: actionTypes.PRODUCT_LIST.EDIT,
     payload: data,
   };
 }
 
 /**
- * @description - Function to post vote.
+ * @description - Function to add product to cart.
  * @param {Object} data - Payload data.
  * @returns {Object} - Returns type and payload.
  */
-export function storeVote(data) {
+export function addProductCart(data) {
   return {
-    type: actionTypes.POST_VOTE.SUCCESS,
+    type: actionTypes.SHOPPING_CART.ADD,
     payload: data,
   };
 }
 
 /**
- * @description - Function to post question.
+ * @description - Function to delete product from cart.
  * @param {Object} data - Payload data.
  * @returns {Object} - Returns type and payload.
  */
-export function postQuestion(data) {
+export function deleteProductCart(data) {
   return {
-    type: actionTypes.POST_QUESTION.POST,
+    type: actionTypes.SHOPPING_CART.DELETE,
     payload: data,
   };
 }

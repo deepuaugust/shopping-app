@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import questionsReducer from './questionsReducer';
-import questionDetailsReducer from '../reducer/questionDetailsReducer';
-import postVoteReducer from '../reducer/postVoteReducer';
+import  { reducer as formReducer } from "redux-form";
+import productDetailReducer from "./productDetailReducer";
+import shoppingCartReducer from "./shoppingCartReducer";
 
 /**
  * @description - Core reducers combining all other reducers.
  */
 const coreReducer = combineReducers({
-  questionsReducer,
-  questionDetailsReducer,
-  postVoteReducer
+  form: formReducer,
+  productDetailReducer,
+  shoppingCartReducer
 });
 
 export default coreReducer;

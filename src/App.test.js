@@ -6,11 +6,7 @@ import configureStore from 'redux-mock-store';
 const mockStore = configureStore();
 jest.mock('react-dom');
 
-let initialState = {
-  questionsReducer: {
-          data: [],
-  }
-};
+let initialState = {};
 
 let store = mockStore(initialState);
 it('App renders without crashing', () => {

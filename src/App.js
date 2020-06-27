@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import QuestionsList from './components/questionsList';
-import QuestionDetails from './components/questionDetails';
-import NewQuestion from './components/newQuestion';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import './App.css';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import injectSheet from "react-jss";
+import { connect } from "react-redux";
+import InventoryPage from "./components/inventoryPage";
+import ShoppingCart from "./components/shoppingCart";
+import ProductList from "./components/productList";
+import styles from "./App.style";
 
 /**
  * @description - Render the App class.
@@ -15,22 +13,30 @@ import './App.css';
  */
 class App extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <QuestionsList />
-          </Route>
-          <Route path="/questions/:questionid">
-            <QuestionDetails />
-          </Route>
-          <Route path="/add/question">
-            <NewQuestion />
-          </Route>
-        </Switch>
-    </Router>
+      <Fragment>
+        <div className={classes.container}>
+          <div className={classes.fullWidth}>
+            <ProductList />
+          </div>
+          <div className={classes.fullWidth}>
+            <ShoppingCart />
+          </div>
+          <div className={classes.fullWidth}>
+            <InventoryPage onSubmit={this.handleSubmit} />
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  classes: PropTypes.shape({}).isRequired,
+};
+
+App.defaultProps = {};
+
+export default injectSheet(styles)(connect()(App));

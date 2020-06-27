@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import NewQuestion from '../components/newQuestion';
+import InventoryPage from '../components/inventoryPage';
 
 configure({ adapter: new Adapter() });
+const mockStore = configureStore();
 jest.mock('react-dom');
 
-const location = {
-    pathname:'/add/question'
-}
+let initialState = {
+    productDetailReducer: {}
+};
 
-const history = {
-    push : function(){}
-}
+let store = mockStore(initialState);
 
 const div = global.document.createElement('div');
 
-describe("NewQuestion Component", () => {
+describe("InventoryPage Component", () => {
     it('renders without crashing', () => {
-        ReactDOM.render(<Router><NewQuestion location={location} history={history} /></Router>, div);
+        ReactDOM.render(<InventoryPage store={store} />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 });
