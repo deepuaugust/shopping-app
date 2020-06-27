@@ -7,7 +7,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     textAlign: "left",
-    backgroundColor: 'lightgray',
+    backgroundColor: "ivory",
     padding: "15px",
     border: "1px solid black",
     borderRadius: "10px",
