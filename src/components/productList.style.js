@@ -34,6 +34,9 @@ const styles = {
     padding: "10px",
     borderRadius: "5px",
   },
+  fullWidth: {
+      width: '100%',
+  }
 };
 
 export default styles;

@@ -6,7 +6,7 @@ const styles = {
   inputStyles: {
     padding: "10px",
     borderRadius: "5px",
-    width: "100%",
+    width: "90%",
     backgroundColor: 'moccasin'
   },
   rowFlex: {

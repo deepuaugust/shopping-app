@@ -54,7 +54,7 @@ class ProductList extends Component {
               </div>
               <div className={classes.listWidth} style={{width: '60%'}}>
                 <div className={classes.textDiv}>
-                  {val.title}
+                  <div className={classes.fullWidth}>{val.title}</div>
                   <div className={classes.priceDiv}>{val.price}$</div>
                 </div>
                 <div className={classes.textDiv}>
