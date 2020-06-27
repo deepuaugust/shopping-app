@@ -65,7 +65,7 @@ class ProductList extends Component {
                   className={classes.buttonStyles}
                   onClick={() => this.addToCart(val)}
                 >
-                  Add to cart
+                  Add to order
                 </button>
                 </div>
               </div>
