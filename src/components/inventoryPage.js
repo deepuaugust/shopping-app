@@ -136,7 +136,6 @@ class InventoryPage extends Component {
    * @param {Object} data - Data object.
    */
   removeProduct = (data) => {
-    const { isEdit } = this.state;
     const { dispatch } = this.props;
     this.setState({
       isEdit: false,
@@ -267,7 +266,7 @@ class InventoryPage extends Component {
     else if (editInventory)
       alert("Please make sure to save changes before proceeding.");
     else {
-      if (action == "edit") this.editProduct(data, index);
+      if (action === "edit") this.editProduct(data, index);
       else this.removeProduct(data);
     }
   };

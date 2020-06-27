@@ -81,7 +81,7 @@ class ShoppingCart extends Component {
     );
     // totalPrice variable loops through the cart items and adds the total price value of all items.
     let totalPrice = cartItems
-      .map((val) => productList.find((x) => x.id == val.id).price)
+      .map((val) => productList.find((x) => x.id === val.id).price)
       .reduce((acc, curr) => {
         return Number(acc) + Number(curr);
       }, 0);

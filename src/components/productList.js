@@ -50,7 +50,7 @@ class ProductList extends Component {
           {productList.map((val, index) => (
             <div className={classes.rowFlex} key={index}>
               <div className={classes.listWidth}>
-                <img className={classes.imgStyles} src={val.image} />
+                <img alt="Product Listing" className={classes.imgStyles} src={val.image} />
               </div>
               <div className={classes.listWidth} style={{width: '60%'}}>
                 <div className={classes.textDiv}>
