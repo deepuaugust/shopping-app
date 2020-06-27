@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import injectSheet from "react-jss";
-import { connect } from "react-redux";
 import InventoryPage from "./components/inventoryPage";
 import ShoppingCart from "./components/shoppingCart";
 import ProductList from "./components/productList";
@@ -33,10 +32,9 @@ class App extends Component {
 }
 
 App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   classes: PropTypes.shape({}).isRequired,
 };
 
 App.defaultProps = {};
 
-export default injectSheet(styles)(connect()(App));
+export default injectSheet(styles)(App);
